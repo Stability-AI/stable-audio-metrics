@@ -11,7 +11,7 @@ Clone this repository, and create a python virtual environment `python3 -m venv 
 
 ## Usage
 - Each example script (`examples/musiccaps_openl3_fd.py`, `examples/musiccaps_passt_kld.py`, and `example/musiccapss_clap_score.py`) details how to use it.
-- Additional documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `clap_score.py`.
+- Additional documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `src/clap_score.py`.
 - We only support GPU usage, because it can be too slow on CPU.
 
 Modify any of our examples to such that `generated_path` points to the folder you want to evaluate and run it. For example: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. 

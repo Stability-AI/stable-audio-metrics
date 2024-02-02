@@ -7,7 +7,7 @@ Collection of metrics for evaluating generative audio models:
 ## Installation 
 Clone this repository, and create a python virtual environment `python3 -m venv env`, activate it `source env/bin/activate`, and install the dependencies `pip install -r requirements.txt`.
 
-- ***TROUBLESHOOTING***: it might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
+- ***TROUBLESHOOTING*** – It might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
 
 ## Usage
 

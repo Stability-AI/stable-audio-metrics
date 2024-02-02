@@ -1,5 +1,12 @@
-from src.clap_score import clap_score
+# Navigate up one directory to get to stable-audio-metrics
+import sys
+import os
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, parent_dir)
+
+# Import packages
 import pandas as pd
+from src.clap_score import clap_score
 
 """
 The CLAP_score runs the cosine similarity between the LAION-CLAP text embedding of the given prompt and 

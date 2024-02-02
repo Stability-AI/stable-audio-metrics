@@ -1,23 +1,26 @@
-# Navigate up one directory to get to stable-audio-metrics
+# navigate up one directory to get to stable-audio-metrics
 import sys
 import os
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parent_dir)
 
-# Import packages
+# import packages
 import pandas as pd
 from src.clap_score import clap_score
 from src.passt_kld import passt_kld
 from src.openl3_fd import openl3_fd
 
-# the audio in generated_path should be named according to the csv_file_path below
-generated_path = '/weka/cj/sa/bulk/musiccaps-95s-sa/' # path with the audio to evaluate
-
-
+# the audio in generated_path should be named according to the 'ytid' csv_file_path below
+generated_path = 'your_model_outputs_folder' # path with the audio to evaluate
 csv_file_path = 'load/musiccaps-public.csv' # file with ids and prompts correspondences
 
 # these are the musiccaps ids that we could not download from Youtube – we ignore them for KLpasst computation
+# at the time of downloading musiccaps, 5434 out of 5521 audios were available, this is the list of audios that were not available:
 NOT_IN_MUSICCAPS = ['NXuB3ZEpM5U', 'C7OIuhWSbjU', 'Rqv5fu1PCXA', 'WvEtOYCShfM', '25Ccp8usBtE', 'idVCpQaByc4', 'tpamd6BKYU4', 'bpwO0lbJPF4', 'We0WIPYrtRE', 'kiu-40_T5nY', '5Y_mT93tkvQ', 'zCrpaLEq1VQ', '8olHAhUKkuk', '6xxu6f0f0e4', 'B7iRvj8y9aU', 'rrAIuGMTqtA', 'UdA6I_tXVHE', 'm-e3w2yZ6sM', 'Xy7KtmHMQzU', 'd6-bQMCz7j0', 'BeFzozm_H5M', 't5fW1-6iXZY', 'jd1IS7N3u0I', '_hYBs0xee9Y', 'EhFWLbNBOxc', '63rqIYPHvlc', 'Jk2mvFrdZTU', 'IbJh1xeBFcI', 'HAHn_zB47ig', 'j9hAUlz5kQs', 'Vu7ZUUl4VPc', 'asYb6iDz_kM', 'fZyq2pM2-dI', 'vOAXAoHtl7o', 'go_7i6WvfeE', 'iXgEQj1Fs7g', 'dcY062mkf9g', '_ACyiKGpD8Y', '_DHMdtRRJzE', 'zSSIGv82318', '2dyxjGTXSpA', '7WZwlOrRELI', 'g8USMvt9np0', '374R7te0ra0', 'CCFYOw8keiI', 'eHeUipPZHIc', '0J_2K1Gvruk', 'MYtq46rNsCA', 'NIcsJ8sEd0M', '8vFJX7NcSbI', 'TkclVqlyKx4', 'T6iv9GFIVyU', 'ChqJYrmQIN4', 'ZZrvO__SNtA', 'fwXh_lMOqu0', '0khKvVDyYV4', '-sevczF5etI', 'qc1DaM4kdO0', 'wBe5tW8iJew', 'vQHKa69Mkzo', 'Fv9swdLA-lo', 'Ah_aYOGnQ_I', 'nTtxF9Wyw6o', '7B1OAtD_VIA', 'OS4YFp3DiEE', 'lTLsL94ABRs', 'jmPmqzxlOTY', 'k-LkhT4HAiE', 'Hvs6Xwc6-gc', 'xxCnmao8FAs', 'BiQik0xsWxk', 'L5Uu_0xEZg4', 'cADT8fUucLQ', 'ed-1zAOr9PQ', 'zSq2D_GF00o', 'gdtw54I8soM', 'lrk00BNiuD4', 'RQ0-sjpAPKU', 'SLq-Co_szYo', '0fqtA_ZBn_8', 'Xoke1wUwEXY', 'LRfVQsnaVQE', 'p_-lKpxLK3g', 'AaUZb-iRStE', '0pewITE1550', 'JNw0A8pRnsQ', 'vVNWjq9byoQ']
+
+# note that this script allows comparing against Stable Audio without downloading the dataset
+# if all parameters are kept as in this file, the results are comparable with the ones in Stable Audio
+# all ref_probabilities and ref_embeddings are already precomputed in load folder
 
 
 print('Computing CLAP score..')
@@ -50,7 +53,7 @@ model_sr = 44100 # maximum bandwidth at which we evaluate, up to 48kHz
 type = 'music' # openl3 model trained on 'music' or 'env'
 hop = 0.5 # openl3 hop_size in seconds (openl3 window is 1 sec)
 batch = 4
-# compute the FDopenl3 given the parameters above
+# compute the FDopenl3 given the parameters above. Keep them as they are to compare with Stable Audio!
 fd = openl3_fd(
     channels=model_channels,
     samplingrate=model_sr,

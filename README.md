@@ -1,13 +1,13 @@
 # stable-audio-metrics
 Collection of metrics for evaluating generative audio models:
-- Fréchet Distance, based on Openl3: https://github.com/marl/openl3
-- Kullback–Leibler divergence, based on PaSST: https://github.com/kkoutini/PaSST
-- CLAP score, based on CLAP-LION: https://github.com/LAION-AI/CLAP
+- Fréchet Distance, based on [Openl3](https://github.com/marl/openl3).
+- Kullback–Leibler divergence, based on [PaSST](https://github.com/kkoutini/PaSST).
+- CLAP score, based on [CLAP-LION](https://github.com/LAION-AI/CLAP).
 
 ## Installation 
 Clone this repository, and create a python virtual environment `python3 -m venv env`, activate it `source env/bin/activate`, and install the dependencies `pip install -r requirements.txt`.
 
-- *TROUBLESHOOTING*: `stable-audio-metrics` might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
+- ***TROUBLESHOOTING**: `stable-audio-metrics` might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
 
 ## Usage
 

@@ -15,7 +15,7 @@ Modify our examples such that `generated_path` points to the folder you want to 
 - Each example script (`examples/musiccaps_openl3_fd.py`, `examples/musiccaps_passt_kld.py`, and `example/musiccapss_clap_score.py`) details how to use it.
 - Additional documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `src/clap_score.py`.
 - We only support GPU usage, because it can be too slow on CPU.
-- ***IMPORTANT*** – The `no-audio` examples allow running the evaluations without downloading the datasets, because reference statistics and embeddings are already computed in `load`.  We do not provide any pre-computed embedding for the CLAP score, because is fast to compute. [Check the example's documentation](examples/README.md).
+- ***IMPORTANT*** – The `no-audio` examples allow running the evaluations without downloading the datasets, because reference statistics and embeddings are already computed in `load`.  We do not provide any pre-computed embedding for the CLAP score, because is fast to compute. [Check the examples' documentation](examples/README.md).
 - ***COMPARING w/ STABLE AUDIO*** – The pre-computed statistics and embeddings allows comparing against Stable Audio without the need to download the audio. Further, you don't need to download each datasets' text prompts since they are also available in the `load` folder. To compare against Stable Audio, you must set all parameters as in the `no-audio` examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison.
 
 ## Data structure

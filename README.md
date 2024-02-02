@@ -15,22 +15,13 @@ Clone this repository, and create a python virtual environment `python3 -m venv 
 - We only support GPU usage, because it can be too slow on CPU.
 
 Modify our examples such that `generated_path` points to the folder you want to evaluate and run it. For example: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. 
-- *IMPORTANT*: the `no-audioaudio` examples allow running the evaluations without downloading the datasets, because we already computed the statistics/embeddings.
-- *COMPARING RESULTS*: the pre-computed statistics/probabilities (in `load` folder) allows comparing against Stable Audio (with the exact same conditions) without the need to download the audio. Further, you don't need to download each datasets' text/prompts/captions since they are available in the `load` folder. We do not provide any pre-computed embedding for the CLAP score, because is fast to compute. To compare against Stable Audio, you must set all parameters as in the examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison against Stable Audio.
+- *IMPORTANT* The `no-audioaudio` examples allow running the evaluations without downloading the datasets, because statistics/embeddings are already computed in `load`.
+- *COMPARING RESULTS*: the pre-computed statistics/probabilities allows comparing against Stable Audio (with the exact same conditions) without the need to download the audio. Further, you don't need to download each datasets' text prompts since they are also available in the `load` folder. We do not provide any pre-computed embedding for the CLAP score, because is fast to compute. To compare against Stable Audio, you must set all parameters as in the examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison against Stable Audio.
 
 ## Data structure
 Generate an audio for every prompt in each dataset, and name each generated audio by its corresponding id. 
 
-Our musiccaps examples assume the following structure, where files are named after `ytid` from the prompts file `load/musiccaps-public.csv`:
-- your_model_outputsfolder/-kssA-FOzU.wav
-- your_model_outputs_folder/_0-2meOf9qY.wav
-- your_model_outputs_folder/_1woPC5HWSg.wav
-- ...
-- your_model_outputs_folder/ZzyWbehtt0M.wav
+Our musiccaps examples assume the following structure, where 5,521 generations are named after `ytid` from the prompts file `load/musiccaps-public.csv`: `your_model_outputsfolder/-kssA-FOzU.wav','your_model_outputs_folder/_0-2meOf9qY.wav', ... `your_model_outputs_folder/ZzyWbehtt0M.wav`.
 
-Our audiocaps examples assume the following structure, where files are named after `audiocap_id` from the prompts file `load/audiocaps-test.csv`:
-- your_model_outputsfolder/3.wav
-- your_model_outputs_folder/481.wav
-- your_model_outputs_folder/508.wav
-- ...
-- your_model_outputs_folder/107432.wav
+Our audiocaps examples assume the following structure, where 4,875 generations are named after `audiocap_id` from the prompts file `load/audiocaps-test.csv`:
+`your_model_outputsfolder/3.wav`, `your_model_outputs_folder/481.wav`, ... `your_model_outputs_folder/107432.wav`.

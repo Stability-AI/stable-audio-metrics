@@ -14,7 +14,7 @@ Clone this repository, and create a python virtual environment `python3 -m venv 
 - Additional documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `src/clap_score.py`.
 - We only support GPU usage, because it can be too slow on CPU.
 
-Modify any of our examples to such that `generated_path` points to the folder you want to evaluate and run it. For example: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. 
+Modify our examples such that `generated_path` points to the folder you want to evaluate and run it. For example: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. 
 - *IMPORTANT*: the `no-audioaudio` examples allow running the evaluations without downloading the datasets, because we already computed the statistics/embeddings for you. This allows to easily compare the results of your generative model against Stable Audio.
 - *IMPORTANT*: the pre-computed statistics/probabilities (in `load` folder) allows comparing against Stable Audio (with the exact same conditions) without the need to download the audio. Further, you don't need to download each datasets' text/prompts/captions. They are available in the `load` folder. We do not provide any pre-computed embedding for the **CLAP score**, because is fast to compute.
 

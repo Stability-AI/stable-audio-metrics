@@ -18,3 +18,4 @@ The following examples do not required downloading the audio. To facilitate eval
 - `musiccaps_nosinging_no-audio.py`: run CLAP, FDopenl3 and KLpasst metrics for the musiccaps subset without singing voice (vocals) prompts.
 
 These final examples would allow you to compare against Stable Audio.
+- ***COMPARING w/ STABLE AUDIO*** – The pre-computed statistics and embeddings allows comparing against Stable Audio (with the exact same conditions) without the need to download the audio. Further, you don't need to download each datasets' text prompts since they are also available in the `load` folder. We do not provide any pre-computed embedding for the CLAP score, because is fast to compute. To compare against Stable Audio, you must set all parameters as in the examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison.

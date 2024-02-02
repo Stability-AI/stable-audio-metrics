@@ -16,3 +16,5 @@ The following examples do not required downloading the audio. To facilitate eval
 - `audiocaps_no-audio.py`: run CLAP, FDopenl3 and KLpasst metrics for audiocaps.
 - `musiccaps_no-audio.py`: run CLAP, FDopenl3 and KLpasst metrics for musiccaps.
 - `musiccaps_nosinging_no-audio.py`: run CLAP, FDopenl3 and KLpasst metrics for the musiccaps subset without singing voice (vocals) prompts.
+
+These final examples would allow you to compare against Stable Audio.

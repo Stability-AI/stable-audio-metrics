@@ -7,7 +7,7 @@ Collection of metrics for evaluating generative audio models:
 ## Installation 
 Clone this repository, and create a python virtual environment `python3 -m venv env`, activate it `source env/bin/activate`, and install the dependencies `pip install -r requirements.txt`.
 
-**TROUBLESHOOTING**: `stable-audio-metrics` might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
+- *TROUBLESHOOTING*: `stable-audio-metrics` might require an older version of cuda because of Openl3 dependencies. Try cuda 11.8 if you find it does not run on GPU as expected. Slurm users might want to run `module load cuda/11.8`.
 
 ## Usage
 Each example script (`examples/musiccaps_openl3_fd.py`, `examples/musiccaps_passt_kld.py`, and `example/musiccapss_clap_score.py`) details how to use it. We only support GPU usage, because it can be too slow on CPU. Additional documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `clap_score.py`.

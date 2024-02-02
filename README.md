@@ -21,7 +21,7 @@ Modify our examples such that `generated_path` points to the folder you want to 
 ## Data structure
 Generate an audio for every prompt in each dataset, and name each generated audio by its corresponding id. 
 
-Our musiccaps examples assume the following structure, where 5,521 generations are named after `ytid` from the prompts file `load/musiccaps-public.csv`: `your_model_outputsfolder/-kssA-FOzU.wav`,'`your_model_outputs_folder/_0-2meOf9qY.wav`, ... `your_model_outputs_folder/ZzyWbehtt0M.wav`.
+Our musiccaps examples assume the following structure, where 5,521 generations are named after the `ytid` from the prompts file `load/musiccaps-public.csv`: `your_model_outputsfolder/-kssA-FOzU.wav`,'`your_model_outputs_folder/_0-2meOf9qY.wav`, ... `your_model_outputs_folder/ZzyWbehtt0M.wav`.
 
-Our audiocaps examples assume the following structure, where 4,875 generations are named after `audiocap_id` from the prompts file `load/audiocaps-test.csv`:
+Our audiocaps examples assume the following structure, where 4,875 generations are named after the `audiocap_id` from the prompts file `load/audiocaps-test.csv`:
 `your_model_outputsfolder/3.wav`, `your_model_outputs_folder/481.wav`, ... `your_model_outputs_folder/107432.wav`.

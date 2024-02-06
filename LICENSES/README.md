@@ -8,7 +8,7 @@
   - [CLAP-LAION license](https://github.com/LAION-AI/CLAP/blob/main/LICENSE).
 
 The Fréchet Distance code is inspired in the following repositories. These are the links to their licenses:
-- `pytorch-fid` [license](https://github.com/mseitzer/pytorch-fid/blob/master/LICENSE)
-- `frechet-audio-distance` [license](https://github.com/gudgud96/frechet-audio-distance/blob/main/LICENSE)
+- `pytorch-fid`'s [license](https://github.com/mseitzer/pytorch-fid/blob/master/LICENSE)
+- `frechet-audio-distance`'s [license](https://github.com/gudgud96/frechet-audio-distance/blob/main/LICENSE)
 
 

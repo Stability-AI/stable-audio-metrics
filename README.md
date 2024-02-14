@@ -1,8 +1,10 @@
 # stable-audio-metrics
-Collection of metrics for evaluating long-form, full-band, and variable-length music and audio generative models:
+Collection of metrics for evaluating music and audio generative models:
 - Fréchet Distance at 48kHz, based on [Openl3](https://github.com/marl/openl3).
-- Kullback–Leibler divergence, based on [PaSST](https://github.com/kkoutini/PaSST).
-- CLAP score, based on [CLAP-LION](https://github.com/LAION-AI/CLAP).
+- Kullback–Leibler divergence at 32kHz, based on [PaSST](https://github.com/kkoutini/PaSST).
+- CLAP score at 48kHz, based on [CLAP-LION](https://github.com/LAION-AI/CLAP).
+
+`stable-audio-metrics` adapted established metrics to assess the more realistic use case of long-form full-band stereo generations. All metrics can deal with variable-length inputs.
 
 ## Installation 
 Clone this repository, and create a python virtual environment `python3 -m venv env`, activate it `source env/bin/activate`, and install the dependencies `pip install -r requirements.txt`.

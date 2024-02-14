@@ -1,6 +1,6 @@
 # stable-audio-metrics
 Collection of metrics for evaluating long-form, full-band, and variable-length music and audio generative models:
-- Fréchet Distance, based on [Openl3](https://github.com/marl/openl3).
+- Fréchet Distance at 48kHz, based on [Openl3](https://github.com/marl/openl3).
 - Kullback–Leibler divergence, based on [PaSST](https://github.com/kkoutini/PaSST).
 - CLAP score, based on [CLAP-LION](https://github.com/LAION-AI/CLAP).
 

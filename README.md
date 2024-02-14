@@ -2,7 +2,7 @@
 Collection of metrics for evaluating music and audio generative models:
 - Fréchet Distance at 48kHz, based on [Openl3](https://github.com/marl/openl3).
 - Kullback–Leibler divergence at 32kHz, based on [PaSST](https://github.com/kkoutini/PaSST).
-- CLAP score at 48kHz, based on [CLAP-LION](https://github.com/LAION-AI/CLAP).
+- CLAP score at 48kHz, based on [CLAP-LAION](https://github.com/LAION-AI/CLAP).
 
 `stable-audio-metrics` adapted established metrics to assess the more realistic use case of long-form full-band stereo generations. All metrics can deal with variable-length inputs.
 
@@ -15,18 +15,18 @@ Clone this repository, and create a python virtual environment `python3 -m venv 
 ## Documentation
 
 Main documentation is available in: 
-- [`src/openl3_fd.py`](src/openl3_fd.py)
-- [`src/passt_kld.py`](src/passt_kld.py)
-- [`src/clap_score.py`](src/clap_score.py)
+- Fréchet Distance based on Openl3:  [`src/openl3_fd.py`](src/openl3_fd.py)
+- Kullback–Leibler divergence based on PaSST: [`src/passt_kld.py`](src/passt_kld.py)
+- CLAP-LAION score: [`src/clap_score.py`](src/clap_score.py)
 
-Each example script further details how to use it;
-- [`examples/musiccaps_openl3_fd.py`](example/musiccaps_openl3_fd.py)
-- [`examples/musiccaps_passt_kld.py`](example/musiccaps_passt_kld.py)
-- [`example/musiccapss_clap_score.py`](example/musiccapss_clap_score.py)
+Each example script further details how to use it:
+- Fréchet Distance based on Openl3: [`examples/musiccaps_openl3_fd.py`](example/musiccaps_openl3_fd.py)
+- Kullback–Leibler divergence based on PaSST: [`examples/musiccaps_passt_kld.py`](example/musiccaps_passt_kld.py)
+- CLAP-LAION score: [`example/musiccapss_clap_score.py`](example/musiccapss_clap_score.py)
 
 ## Usage
 
-Modify our examples such that they point to the folder you want to evaluate and run it. For example, modify and run: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. Check the examples' [documentation](examples/README.md).
+Modify our examples such that they point to the folder you want to evaluate and run it. For example, modify and run: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` to evaluate with musiccaps datasets, or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py` to evaluate with audiocaps. Check the examples' [documentation](examples/README.md).
 - ***METRICS WITHOUT DATASETS*** – The `no-audio` examples allow running the evaluations without downloading the datasets, because reference statistics and embeddings are already computed in `load`.  We do not provide any pre-computed embedding for the CLAP score, because is fast to compute.
 - ***COMPARING WITH STABLE AUDIO*** – To compare against Stable Audio, you must set all parameters as in the `no-audio` examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison.
 

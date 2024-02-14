@@ -28,7 +28,7 @@ Each example script further details how to use it;
 
 Modify our examples such that they point to the folder you want to evaluate and run it. For example, modify and run: `CUDA_VISIBLE_DEVICES=0 python examples/musiccaps_no-audio.py` or `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py`. Check the examples' [documentation](examples/README.md).
 - ***METRICS WITHOUT DATASETS*** – The `no-audio` examples allow running the evaluations without downloading the datasets, because reference statistics and embeddings are already computed in `load`.  We do not provide any pre-computed embedding for the CLAP score, because is fast to compute.
-- ***COMPARING WITH STABLE AUDIO*** – The pre-computed statistics and embeddings allows comparing against Stable Audio without the need to download the audio. Further, you don't need to download each datasets' text prompts since they are also available in the `load` folder. To compare against Stable Audio, you must set all parameters as in the `no-audio` examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison.
+- ***COMPARING WITH STABLE AUDIO*** – To compare against Stable Audio, you must set all parameters as in the `no-audio` examples. Even if your model outputs mono audio at a different sampling rate. `stable-audio-metrics` will do the resampling and mono/stereo handling to deliver a fair comparison.
 
 ## Data structure
 Generate an audio for every prompt in each dataset, and name each generated audio by its corresponding id. 

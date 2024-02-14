@@ -14,7 +14,7 @@ Clone this repository, and create a python virtual environment `python3 -m venv 
 
 ## Documentation
 
-Main documentation is available in: `src/openl3_fd.py`, `src/passt_kld.py`, and `src/clap_score.py`.
+Main documentation is available in: [`src/openl3_fd.py`](src/openl3_fd.py), [`src/passt_kld.py`](src/openl3_fd.py), and [`src/clap_score.py`](src/openl3_fd.py).
 
 Each example script (`examples/musiccaps_openl3_fd.py`, `examples/musiccaps_passt_kld.py`, and `example/musiccapss_clap_score.py`) details how to use it.
 

@@ -1,5 +1,5 @@
 import openl3
-import soundfile as sf
+import librosa
 import numpy as np
 from scipy import linalg
 import glob
@@ -105,7 +105,8 @@ def extract_embeddings(directory_path, channels, samplingrate, content_type, ope
         batch_sr = []
         
         for file in batch_files:
-            audio, sr = sf.read(file)
+            audio, sr = librosa.load(file, sr=None, mono=False)
+            audio = audio.T
             audio = pyln.normalize.peak(audio, -1.0)            
             if audio.shape[0] < sr: 
                 print('Audio shorter than 1 sec, openl3 will zero-pad it:', file, audio.shape, sr)
@@ -180,7 +181,7 @@ def extract_embeddings_nobatching(directory_path, channels, samplingrate, conten
 
     first = True
     for file in tqdm(wav_files):
-        audio, sr = sf.read(file)
+        audio, sr = librosa.load(file, sr=None)
         audio = pyln.normalize.peak(audio, -1.0)
         if audio.shape[0] < sr: 
             print('Audio shorter than 1 sec, openl3 will zero-pad it:', file, audio.shape, sr)

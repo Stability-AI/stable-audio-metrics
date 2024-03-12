@@ -25,8 +25,8 @@ Each example script (with musiccaps) further details how to use it:
 - CLAP-LAION score: [`example/musiccapss_clap_score.py`](example/musiccapss_clap_score.py)
 
 Our [documentation](examples/README.md) includes examples on how to evaluate with:
-- Musiccaps dataset
-- Audioccaps dataset
+- MusicCaps dataset
+- AudiocCaps dataset
 - Song Describer dataset
 
 ## Usage

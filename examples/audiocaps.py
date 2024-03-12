@@ -17,10 +17,10 @@ csv_file_path = 'load/audiocaps-test.csv' # file with ids and prompts correspond
 # path with the recorded/reference/ground truth audio for FDopenl3 and KLpasst
 reference_path_ytid = 'path_to_audiocaps_folder_with_youtube_id'
 reference_path_acid = 'path_to_musiccaps_folder_with_audiocaps_id'
-# note that, differently from musiccaps, for audiocaps we need two reference_paths because it contains multiple caption per audio in the dataset
+# note that, differently from musiccaps, for audiocaps we need two reference_paths because it contains multiple captions per audio in the dataset
 # for KL our assumed data structure is an audiofile per audiocaps_ids unique caption (4875 acid) 
 # for FD our assumed data structure is an audiofile per youtube_ids unique audio (881 ytid)
-# - the acid path contains as many (copied) videos as captions it exists, each representing a prompt an named with audiocaps_ids
+# - the acid path contains as many (copied) videos as captions it exists, each representing a prompt and named with audiocaps_ids
 # - the ytid path contains the youtube videos named by youtube_ids
 # acid folder can be symlinks to ytid folder
 
@@ -43,7 +43,6 @@ print('[audiocaps] CLAP score (630k-audioset-fusion-best.pt): ', clp, generated_
 print('Computing KLpasst..')
 # list all ids that are in both ref_path (reference audio) and eval_path (generated audio)
 # in this audiocaps case here, our audios are named with the ytid in csv_file_path
-df = pd.read_csv(csv_file_path)
 audiocaps_ids = df['audiocap_id'].tolist()
 # map youtube_ids to audiocaps_ids, because KL operates with audiocaps_ids instead of youtube_ids
 ids_not_in_audiocaps = df[df['youtube_id'].isin(NOT_IN_AUDIOCAPS)]['audiocap_id'].tolist() # omit those

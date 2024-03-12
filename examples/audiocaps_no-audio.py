@@ -34,13 +34,12 @@ print('[audiocaps] CLAP score (630k-audioset-fusion-best.pt): ', clp, generated_
 
 
 print('Computing KLpasst..')
-# list all ids that are in both ref_path (reference audio) and eval_path (generated audio)
+# list all ids that are in both ref_path (reference audio that is loaded) and eval_path (generated audio)
 # in this audiocaps case here, our audios are named with the ytid in csv_file_path
-df = pd.read_csv(csv_file_path)
 audiocaps_ids = df['audiocap_id'].tolist()
 # map youtube_ids to audiocaps_ids, because KL operates with audiocaps_ids instead of youtube_ids
 ids_not_in_audiocaps = df[df['youtube_id'].isin(NOT_IN_AUDIOCAPS)]['audiocap_id'].tolist() # omit those
-# compute KLpasst between ref_path (reference audio) and eval_path (generated audio)
+# compute KLpasst between ref_path (reference audio that is loaded) and eval_path (generated audio)
 kl = passt_kld(ids=audiocaps_ids, 
               eval_path=generated_path, 
               load_ref_probabilities='load/passt_kld/stable-audio__audiocaps-test__collectmean__reference_probabilities.pkl', 

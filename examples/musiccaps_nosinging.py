@@ -16,8 +16,9 @@ csv_file_path = 'load/musiccaps-public-nosinging.csv' # file with ids and prompt
 
 # path with the recorded/reference/ground truth audio for FDopenl3 and KLpasst
 reference_path = 'path_to_musiccaps_folder'
-# important: this path must have only the audiofiles in csv_file_path for the correct computation of metrics below
-# note that reference_path must only have the nosinging files because FD computes metrics for everything in the folder
+
+# [IMPORTANT] generated and reference paths must have only the audiofiles in csv_file_path (no-singing files) for the correct computation of metrics below
+# hence, generated and reference paths must only contain no-singing files (listed in csv_file_path) because FD computes metrics for everything in the folder
 
 # these are the musiccaps ids that we could not download from Youtube – we ignore them for KLpasst computation
 # at the time of downloading musiccaps, 5434 out of 5521 audios were available, this is the list of audios that were not available:
@@ -37,7 +38,6 @@ print('[musiccaps] CLAP score (630k-audioset-fusion-best.pt): ', clp, generated_
 print('Computing KLpasst..')
 # list all ids that are in both ref_path (reference audio) and eval_path (generated audio)
 # in this musiccaps case here, our audios are named with the ytid in csv_file_path
-df = pd.read_csv(csv_file_path)
 musiccaps_ids = df['ytid'].tolist()
 # compute KLpasst between ref_path (reference audio) and eval_path (generated audio)
 kl = passt_kld(ids=musiccaps_ids, 

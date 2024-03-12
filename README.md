@@ -19,7 +19,7 @@ Main documentation is available in:
 - Kullback–Leibler divergence based on PaSST: [`src/passt_kld.py`](src/passt_kld.py)
 - CLAP-LAION score: [`src/clap_score.py`](src/clap_score.py)
 
-Each example script further details how to use it:
+Each example script (with musiccaps) further details how to use it:
 - Fréchet Distance based on Openl3: [`examples/musiccaps_openl3_fd.py`](example/musiccaps_openl3_fd.py)
 - Kullback–Leibler divergence based on PaSST: [`examples/musiccaps_passt_kld.py`](example/musiccaps_passt_kld.py)
 - CLAP-LAION score: [`example/musiccapss_clap_score.py`](example/musiccapss_clap_score.py)

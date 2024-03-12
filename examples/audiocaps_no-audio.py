@@ -42,7 +42,7 @@ ids_not_in_audiocaps = df[df['youtube_id'].isin(NOT_IN_AUDIOCAPS)]['audiocap_id'
 # compute KLpasst between ref_path (reference audio that is loaded) and eval_path (generated audio)
 kl = passt_kld(ids=audiocaps_ids, 
               eval_path=generated_path, 
-              load_ref_probabilities='load/passt_kld/stable-audio__audiocaps-test__collectmean__reference_probabilities.pkl', 
+              load_ref_probabilities='load/passt_kld/audiocaps-test__collectmean__reference_probabilities.pkl', 
               no_ids=ids_not_in_audiocaps,
               collect='mean')
 print('[audiocaps] KLpasst: ', kl, generated_path)
@@ -62,7 +62,7 @@ fd = openl3_fd(
     openl3_hop_size=hop,
     eval_path=generated_path,
     eval_files_extension='.wav',
-    load_ref_embeddings='load/openl3_fd/stable-audio__audiocaps-test__channels2__44100__openl3env__openl3hopsize0.5__batch4.npz',
+    load_ref_embeddings='load/openl3_fd/audiocaps-test__channels2__44100__openl3env__openl3hopsize0.5__batch4.npz',
     batching=batch
 )
 

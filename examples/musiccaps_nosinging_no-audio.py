@@ -43,7 +43,7 @@ musiccaps_ids = df['ytid'].tolist()
 # compute KLpasst between ref_path (reference audio that is loaded) and eval_path (generated audio)
 kl = passt_kld(ids=musiccaps_ids, 
               eval_path=generated_path, 
-              load_ref_probabilities='load/passt_kld/stable-audio__musiccaps-public-nosinging__collectmean__reference_probabilities.pkl', 
+              load_ref_probabilities='load/passt_kld/musiccaps-public-nosinging__collectmean__reference_probabilities.pkl', 
               no_ids=NOT_IN_MUSICCAPS,
               collect='mean')
 print('[musiccaps] KLpasst: ', kl, generated_path)
@@ -63,7 +63,7 @@ fd = openl3_fd(
     openl3_hop_size=hop,
     eval_path=generated_path,
     eval_files_extension='.wav',
-    load_ref_embeddings='load/openl3_fd/stable-audio__musiccaps-public-nosinging__channels2__44100__openl3music__openl3hopsize0.5__batch4.npz',
+    load_ref_embeddings='load/openl3_fd/musiccaps-public-nosinging__channels2__44100__openl3music__openl3hopsize0.5__batch4.npz',
     batching=batch
 )
 

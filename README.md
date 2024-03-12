@@ -24,6 +24,11 @@ Each example script (with musiccaps) further details how to use it:
 - Kullback–Leibler divergence based on PaSST: [`examples/musiccaps_passt_kld.py`](example/musiccaps_passt_kld.py)
 - CLAP-LAION score: [`example/musiccapss_clap_score.py`](example/musiccapss_clap_score.py)
 
+Our [documentation](examples/README.md) includes examples on how to evaluate with:
+- Musiccaps dataset
+- Audioccaps dataset
+- Song Describer dataset
+
 ## Usage
 
 Modify our examples such that they point to the folder you want to evaluate and run it. For example, modify and run: `CUDA_VISIBLE_DEVICES=6 python examples/audiocaps_no-audio.py` to evaluate with audiocaps. Check more examples in our [documentation](examples/README.md).

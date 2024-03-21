@@ -32,7 +32,7 @@ sdd_ids = df['caption_id'].tolist()
 # compute KLpasst between ref_path (reference audio that is loaded) and eval_path (generated audio)
 kl = passt_kld(ids=sdd_ids, 
               eval_path=generated_path, 
-              load_ref_probabilities='load/passt_kld/song-describer-nosinging__collectmean__reference_probabilities.pkl', 
+              load_ref_probabilities='load/passt_kld/song_describer-nosinging__collectmean__reference_probabilities.pkl', 
               collect='mean')
 print('[song describer dataset] KLpasst: ', kl, generated_path)
 
@@ -51,7 +51,7 @@ fd = openl3_fd(
     openl3_hop_size=hop,
     eval_path=generated_path,
     eval_files_extension='.wav',
-    load_ref_embeddings='load/openl3_fd/song-describer-nosinging__channels2__44100__openl3music__openl3hopsize0.5__batch4.npz',
+    load_ref_embeddings='load/openl3_fd/song_describer-nosinging__channels2__44100__openl3music__openl3hopsize0.5__batch4.npz',
     batching=batch
 )
 

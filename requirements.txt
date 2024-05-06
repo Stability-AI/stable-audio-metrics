@@ -135,7 +135,7 @@ urllib3==2.0.6
 wandb==0.15.12
 wcwidth==0.2.8
 webdataset==0.2.57
-werkzeug==3.0.0
+werkzeug==3.0.3
 wget==3.2
 wrapt==1.15.0
 zipp==3.17.0

@@ -74,7 +74,7 @@ parso==0.8.3
 pathtools==0.1.2
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==10.0.1
+Pillow==10.3.0
 platformdirs==3.11.0
 pooch==1.7.0
 proglog==0.1.10

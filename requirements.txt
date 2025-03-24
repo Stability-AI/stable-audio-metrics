@@ -121,7 +121,7 @@ tifffile==2023.7.10
 timm==0.4.12
 tokenizers==0.14.1
 tomli==2.0.1
-torch==2.1.0
+torch==2.4.0
 torchaudio==2.1.0
 torchlibrosa==0.1.0
 torchvision==0.16.0

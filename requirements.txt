@@ -131,7 +131,7 @@ transformers==4.34.0
 triton==2.1.0
 typing-extensions==4.8.0
 tzdata==2023.3
-urllib3==2.0.6
+urllib3==2.6.3
 wandb==0.15.12
 wcwidth==0.2.8
 webdataset==0.2.57

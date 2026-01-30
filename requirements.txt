@@ -80,7 +80,7 @@ pooch==1.7.0
 proglog==0.1.10
 progressbar==2.5
 prompt-toolkit==3.0.39
-protobuf==4.24.4
+protobuf==6.33.5
 psutil==5.9.5
 ptyprocess==0.7.0
 pure-eval==0.2.2

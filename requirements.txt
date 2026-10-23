@@ -6,7 +6,7 @@ audioread==3.0.1
 backcall==0.2.0
 braceexpand==0.1.7
 cachetools==5.3.1
-certifi==2023.7.22
+certifi==2026.10.19
 cffi==1.16.0
 charset-normalizer==3.3.0
 click==8.1.7
